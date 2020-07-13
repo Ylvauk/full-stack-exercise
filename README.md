@@ -9,7 +9,7 @@ Your app should include the following:
 - CRUD on the backend (an api where you can create, read, update, and delete blog posts)
 - CRUD on the frontend (a react frontend that has axios calls that can create, read, update, and delete blog posts)
 
-**Bonus**: 
+## Bonus 
 
 Include the concept of a user:
 - A post belongs to a user
@@ -44,12 +44,30 @@ const Post = new Schema(
 </p>
 </details>
 
-> Make sure to accomodate this schema in the express routes, controllers, and in your react app as well
-
 In your seed file you will have to:
 1. Create users
 2. Create posts and associate them with users
 3. Create the association between users and posts
+
+Try using the mongoose `populate()` method to return users with their associated posts:
+
+<details><summary>Here is an example express route using populate.</summary>
+<p>
+
+```js
+app.get('/users', async (req, res) => {
+    try {
+        const users = await User.find()
+            .populate('posts')
+        res.json(users)
+    } catch (error) {
+        res.status(500).json({ error: error.message })
+    }
+})
+```
+
+</p>
+</details>
 
 **Tips**
 - https://mongoosejs.com/docs/queries.html
