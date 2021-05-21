@@ -8,6 +8,7 @@ Your task is to build a blog using MongoDB, Mongoose, Express, and React
 2. Add your teammates as collaborators
 3. Create a development branch
 4. Add branch protection rules
+5. Create each teammate's dev branch
 
 Your app should include the following:
 
