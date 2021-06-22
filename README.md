@@ -16,3 +16,18 @@ Your app should include the following:
 - CRUD on the frontend (a react frontend that has axios calls that can create, read, update, and delete blog posts)
 
 Deploy!
+
+### Start Here
+
+```sh
+npm init -y && 
+npm install mongoose express morgan cors && 
+npm install -D nodemon && 
+echo "
+/node_modules
+.DS_Store
+.env" >> .gitignore &&
+mkdir db models seed routes controllers &&
+touch server.js db/connection.js models/post.js seed/data.js routes/posts.js controllers/posts.js &&
+code .
+```
